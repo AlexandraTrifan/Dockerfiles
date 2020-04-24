@@ -1,0 +1,7 @@
+#!/bin/bash
+
+commit_nb=$(docker run -d --privileged -v `pwd`:/Dockerfiles:rw alexandratr/scopy-flatpak-bionic:latest /bin/bash -xe /Dockerfiles/hooks/update.sh)
+
+# Attach ourselves to the running docker and wait for it to finish
+docker attach $commit_nb
+docker commit $commit_nb alexandratr/scopy-flatpak-bionic:latest
