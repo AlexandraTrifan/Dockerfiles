@@ -1,1 +1,2 @@
-FROM alexandratr/scopy-flatpak-bionic:latest
+FROM alexandratr/scopy-flatpak-bionic:clean
+
